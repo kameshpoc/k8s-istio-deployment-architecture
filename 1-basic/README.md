@@ -1,7 +1,3 @@
-Below is a **README.md** file with step-by-step instructions for your GitHub repository:
-
----
-
 # Kubernetes Deployment with Istio on Minikube
 
 This repository provides YAML files to set up a Minikube cluster with Istio and deploy multiple applications with specific configurations.
