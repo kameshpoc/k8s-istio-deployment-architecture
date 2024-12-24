@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: controlplane-config
+  namespace: controlplane-system
+data:
+  APP2_URL: "http://guardrails-service.guardrails-system.svc.cluster.local:8000"
+  APP3_URL: "http://mockllm-service.mockllm-system.svc.cluster.local:8000"

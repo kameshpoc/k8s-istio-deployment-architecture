@@ -17,6 +17,19 @@ spec:
       containers:
         - name: controlplane-container
           image: kameshayachit/control-plane-app:latest
+          ports:
+            - containerPort: 8000
+          env:
+          - name: APP2_URL
+            valueFrom:
+              configMapKeyRef:
+                key: APP2_URL
+                name: controlplane-config
+          - name: APP3_URL
+            valueFrom:
+              configMapKeyRef:
+                key: APP3_URL
+                name: controlplane-config
 
 ---
 apiVersion: v1
@@ -34,4 +47,9 @@ spec:
     - name: http
       port: 80
       targetPort: 8000
+      # nodePort: 30007
+    - name: http-8000
+      port: 8000
+      targetPort: 8000
+    #   # nodePort: 30007
   type: ClusterIP

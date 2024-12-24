@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: summariser-config
+  namespace: summariser-system
+data:
+  APP1_URL: "http://controlplane-service.controlplane-system.svc.cluster.local:8000"

@@ -1,37 +1,42 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mockllm-app
-  namespace: mockllm-system
+  name: summariser-app
+  namespace: summariser-system
 spec:
   selector:
     matchLabels:
-      app: mockllm-app
+      app: summariser-app
   replicas: 1
   template: # template for the pods
     metadata:
       labels:
-        app: mockllm-app
+        app: summariser-app
         version: "1"
     spec:
       containers:
-        - name: mockllm-container
-          image: kameshayachit/mockllm-app:latest
+        - name: summariser-container
+          image: kameshayachit/summariser-app:latest
+          ports:
+            - containerPort: 8000
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mockllm-service
-  namespace: mockllm-system
+  name: summariser-service
+  namespace: summariser-system
 spec:
   # This defines which pods are going to be represented by this Service
   # The service becomes a network endpoint for either other services
   # or maybe external users to connect to (eg browser)
   selector:
-    app: mockllm-app
+    app: summariser-app
   ports:
     - name: http
       port: 80
+      targetPort: 8000 # Mapping service port 80 to container port 8000
+    - name: http-8000
+      port: 8000 # Exposing port 8000 on the service
       targetPort: 8000
   type: ClusterIP

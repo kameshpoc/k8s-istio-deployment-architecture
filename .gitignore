@@ -2,3 +2,5 @@
 .venv/
 *_pycache__/
 .env
+NA*.yaml
+*.txt
