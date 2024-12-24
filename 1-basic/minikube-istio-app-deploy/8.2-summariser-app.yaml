@@ -19,6 +19,12 @@ spec:
           image: kameshayachit/summariser-app:latest
           ports:
             - containerPort: 8000
+          env:
+          - name: APP1_URL
+            valueFrom:
+              configMapKeyRef:
+                key: APP1_URL
+                name: summariser-config
 
 ---
 apiVersion: v1
