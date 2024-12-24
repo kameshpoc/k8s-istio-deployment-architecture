@@ -5,31 +5,59 @@ metadata:
   namespace: istio-system
 spec:
   selector:
-    istio: ingressgateway # use Istio default gateway implementation
+    istio: ingressgateway # Use Istio's default ingress gateway implementation
   servers:
-    - port:
-        number: 80
-        name: http
-        protocol: HTTP
-      hosts:
-        - "*" # Domain name of the external website
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*" # Allow all external hosts
+
 ---
-# All traffic routed to the fleetman-webapp service
-# No DestinationRule needed as we aren't doing any subsets, load balancing or outlier detection.
-kind: VirtualService
+
 apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
 metadata:
   name: controlplane-vs
   namespace: controlplane-system
 spec:
-  hosts: # which incoming host are we applying the proxy rules to???
-    - "*"
+  hosts:
+  - "*" # Match any external host
   gateways:
-    - istio-system/shared-ingress-gateway
+  - istio-system/shared-ingress-gateway
   http:
-    - route:
-        - destination:
-            host: controlplane-service.controlplane-system.svc.cluster.local
+  - match:
+    - uri:
+        prefix: /generatetext # Prefix for routing to controlplane service
+    route:
+    - destination:
+        host: controlplane-service.controlplane-system.svc.cluster.local
+        port:
+          number: 80
+
+---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: summariser-vs
+  namespace: summariser-system
+spec:
+  hosts:
+  - "*" # Match any external host
+  gateways:
+  - istio-system/shared-ingress-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /summarisecontent # Prefix for routing to summariser service
+    route:
+    - destination:
+        host: summariser-service.summariser-system.svc.cluster.local
+        port:
+          number: 80
+
 # ---
 # apiVersion: networking.istio.io/v1beta1
 # kind: VirtualService
