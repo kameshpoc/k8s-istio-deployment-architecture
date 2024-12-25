@@ -3,4 +3,4 @@
 *_pycache__/
 .env
 NA*.yaml
-*.txt
+*cmd.txt
