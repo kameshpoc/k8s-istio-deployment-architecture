@@ -57,7 +57,7 @@ For detailed application logic, users are encouraged to integrate their own busi
 ---
 
 ## Release History
-- [Release Notes: Version 1.0](app-deployment/release-01)
+- [Release Notes: Version 1.0](app-deployment/release-01/RELEASE-NOTES.md)
 
 ---
 ## Repository: k8s-istio-deployment-architecture

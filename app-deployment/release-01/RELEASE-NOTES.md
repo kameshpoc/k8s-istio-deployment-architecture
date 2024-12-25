@@ -4,10 +4,10 @@
 The initial release of the application (Release 1) introduces the foundational setup, deployment of core services, and basic Istio configurations. This release focuses on establishing the application architecture, ensuring secure namespaces, and enabling path-based routing using Istio.
 
 ---
-## Architecture Diagram
+## High Level Architecture Diagram
 
 Below diagram illustrates the high-level architecture, including the shared Istio Ingress Gateway and service routing setup.
-![Release 1.0 Architecture](diagrams/R1.0-Architecture.png)
+![Release 1.0 Architecture](/diagrams/R1.0-Architecture.png)
 
 ---
 ## Features and Implementations
