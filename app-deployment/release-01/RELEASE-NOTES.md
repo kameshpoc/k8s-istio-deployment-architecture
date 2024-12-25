@@ -4,7 +4,12 @@
 The initial release of the application (Release 1) introduces the foundational setup, deployment of core services, and basic Istio configurations. This release focuses on establishing the application architecture, ensuring secure namespaces, and enabling path-based routing using Istio.
 
 ---
+## Architecture Diagram
 
+Below diagram illustrates the high-level architecture, including the shared Istio Ingress Gateway and service routing setup.
+![Release 1.0 Architecture](diagrams/R1.0-Architecture.png)
+
+---
 ## Features and Implementations
 
 ### 1. **Istio Installation**
@@ -39,14 +44,14 @@ The initial release of the application (Release 1) introduces the foundational s
 
 ---
 
-## Planned Features for Release 2
+## Planned Features for Release 2.0
    - **Circuit Breaking**
      - To introduce resilience and manage traffic spikes using:
        - `10-circuit-breaking.yaml`
    - **Enforce mTLS**
      - To enforce mutual TLS for secure communication between services using:
        - `11-enforce-mtls-only.yaml`
-   - **Enabling Wirhtes routing to support Canary Release (A/B testing)**
+   - **Enabling Weighted routing to support Canary Release (A/B testing)**
      - TBD    
 
 ---

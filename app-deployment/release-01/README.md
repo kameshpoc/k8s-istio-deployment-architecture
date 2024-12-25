@@ -1,6 +1,7 @@
-# Kubernetes Deployment with Istio on Minikube
+# Kubernetes Deployment with Istio on Minikube --> Release 1.0
 
-This repository provides YAML files to set up a Minikube cluster with Istio and deploy multiple applications with specific configurations.
+This folder provides YAML files to set up a Minikube cluster with Istio and deploy multiple applications with specific configurations.
+This is Release 1.0 and you can find more details about it in [Release Notes](RELEASE-NOTES.md) 
 
 ## Prerequisites
 

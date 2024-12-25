@@ -4,3 +4,4 @@
 .env
 NA*.yaml
 *cmd.txt
+*.drawio*

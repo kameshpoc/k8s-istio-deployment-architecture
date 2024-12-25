@@ -1,11 +1,3 @@
-# Repository: k8s-istio-deployment-architecture
-
-This repository is public for reference purposes only. Contributions in the form of issues, pull requests, or feature requests are not accepted. If you'd like to use or modify this project, please fork it.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 # Repository Overview
 
 ## Motivation
@@ -59,6 +51,19 @@ This repository does **not** focus on the development of application business lo
 - Manage secure and scalable application deployment.
 - Configure essential Istio features for traffic management and security.
 
+---
 For detailed application logic, users are encouraged to integrate their own business requirements into the provided deployment architecture.
+
 ---
 
+## Release History
+- [Release Notes: Version 1.0](app-deployment/release-01)
+
+---
+## Repository: k8s-istio-deployment-architecture
+
+This repository is public for reference purposes only. Contributions in the form of issues, pull requests, or feature requests are not accepted. If you'd like to use or modify this project, please fork it.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
